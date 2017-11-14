@@ -25,15 +25,17 @@ class dish{
 
 		//functions
 
-		bool advance();
+		void printDish();
+		//prints representation of the dish to console
+
+		void nextGeneration();
+
+		void advance();
 		//advances to the next stage
-		bool advance(int);
+		void advance(int);
 		//advances an integer number of stages
 
 		//bool autoAdvance();
-
-		void printDish();
-		//prints representation of the dish to console
 
 		void setLiveChar(char);
 		void setDeadChar(char);
@@ -53,9 +55,9 @@ class dish{
 
 	private:
 
-		cell dishState[10][20];
+		cell dishState[20][40];
 
-		int numCells = 200;
+		int numCells = 800;
 
 		int currGeneration;
 
@@ -64,8 +66,5 @@ class dish{
 
 
 };
-
-
-
 
 #endif DISH_H

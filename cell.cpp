@@ -32,17 +32,11 @@ bool cell::getCurrState(){
 	return currentState;
 }
 
+void cell::setNext(bool a){
 
+	nextState = a;
+}
 
-/*
-	Cell Rules:
-
-	1. Fewer than 2 alive neighbors, cell dies
-
-	2. 2 alive neighbors, cell survives
-
-	3. 3 alive neighbors, cell either a) survives b) comes alive
-
-	4. More than 3 alive neighbors, cell dies
-
-*/
+void cell::next(){
+	currentState = nextState;
+}

@@ -21,4 +21,10 @@ int main(void){
 
 	d1.printDish();
 
+	d1.advance(20);
+
+	cout << endl;
+
+	d1.printDish();
+
 }
