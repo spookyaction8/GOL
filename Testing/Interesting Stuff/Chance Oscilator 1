@@ -1,0 +1,578 @@
+Last login: Thu Nov 16 15:18:58 on ttys001
+res1-166-247-dhcp:~ zacharyteutsch$ /Users/zacharyteutsch/Desktop/GOL/GOL ; exit;
+Welcome to Conway's Game of Life!
+What would you like to do?
+1) Start with a psuedo-random state.
+2) Load an example state.
+3) Load a saved state.
+Enter a number here: 1
+Would like to auto-advance through generations or enter generation values?
+1) Auto-advance.
+2) Control pacing.
+Enter a number here: 1
+Enter a psuedo-random seeding value: 1234
+
+Generation: 1
+              o     o     o o o   o o   
+  o                                     
+                                        
+                                    o   
+o                                   o   
+o                     o         o       
+  o o                           o     o 
+  o o               o   o           o o 
+o o   o o           o   o     o   o   o 
+o o     o   o o o o   o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 2
+                            o           
+                            o           
+                                        
+                                        
+                                  o     
+o                                 o     
+o   o                 o           o o o 
+                                o o   o 
+      o o o   o o   o   o             o 
+o o o o o o   o o o o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 3
+                                        
+                                        
+                                        
+                                        
+                                        
+  o                             o o     
+  o                                   o 
+      o o             o         o o   o 
+  o       o   o     o               o   
+  o o     o   o     o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 4
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+    o                                   
+    o   o                         o   o 
+  o   o   o         o             o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 5
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+      o                                 
+  o o   o                         o     
+  o   o o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 6
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o     o                         o o   
+o       o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 7
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o   o                         o o   
+o       o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 8
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+  o o   o                         o o   
+o       o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 9
+                                        
+                                        
+                                        
+                                        
+                                        
+    o                                   
+  o   o                                 
+o       o                         o o   
+o       o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 10
+                                        
+                                        
+                                        
+                                        
+                                        
+    o                                   
+  o o o                                 
+o o   o o                         o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 11
+                                        
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+o       o                               
+o       o                         o o   
+o       o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 12
+                                        
+                                        
+                                        
+                                        
+    o                                   
+  o o o                                 
+o   o   o                               
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 13
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 14
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 15
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 16
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 17
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 18
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 19
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 20
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 21
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 22
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 23
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 24
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 25
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 26
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 27
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 28
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 29
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 30
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 31
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 32
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 33
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 34
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 35
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 36
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 37
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 38
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 39
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 40
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 41
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 42
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 43
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 44
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 45
+                                        
+                                        
+                                        
+                                        
+    o o                                 
+  o o                                   
+o   o     o                             
+o o   o o o                       o o   
+o   o   o           o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 46
+                                        
+                                        
+                                        
+                                        
+  o o o                                 
+                                        
+o         o                             
+o         o                       o o   
+o         o         o o           o o   
+  o o o             o o                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation: 47
+                                        
+                                        
+                                        
+    o                                   
+    o                                   
+  o o                                   
+                                        
+o o     o o o                     o o   
+o   o   o           o o           o o   
+  o o               o o                 
+

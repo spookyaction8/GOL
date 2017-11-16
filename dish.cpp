@@ -69,6 +69,7 @@ dish::~dish(){
 
 void dish::printDish(){
 
+	cout << "Generation " << currGeneration << endl;
 	for(int i = 0; i < 10; i++){
 
 		for(int j = 0; j < 20; j++){
@@ -87,7 +88,7 @@ void dish::printDish(){
 		cout << "~";
 	}
 
-	cout << endl;
+	
 }
 
 void dish::nextGeneration(){
@@ -110,39 +111,6 @@ void dish::nextGeneration(){
 				4. More than 3 alive neighbors, cell dies
 
 			*/
-
-			/*try{
-				if(dishState[i-1][j].getCurrState())
-					count++;
-			}catch(...){}
-			try{
-				if(dishState[i+1][j].getCurrState())
-					count++;
-			}catch(...){}
-			try{
-				if(dishState[i][j-1].getCurrState())
-					count++;
-			}catch(...){}
-			try{
-				if(dishState[i][j+1].getCurrState())
-					count++;
-			}catch(...){}
-			try{
-				if(dishState[i+1][j+1].getCurrState())
-					count++;
-			}catch(...){}
-			try{	
-				if(dishState[i-1][j-1].getCurrState())
-					count++;
-			}catch(...){}
-			try{
-				if(dishState[i+1][j-1].getCurrState())
-					count++;
-			}catch(...){}
-			try{
-				if(dishState[i-1][j+1].getCurrState())
-					count++;
-			}catch(...){} */
 
 			if(dishState[i-1][j].getCurrState() && i != 0)
 					count++;
@@ -200,11 +168,12 @@ void dish::advance(int n){
 }
 
 void dish::autoAdvance(int n){
-
-	advance();
-	printDish();
-	sleep(n);
-	autoAdvance(n);
+	
+		advance();
+		printDish();
+		sleep(n);
+		autoAdvance(n);
+			
 }
 
 void dish::setLiveChar(char a){
