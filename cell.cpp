@@ -32,6 +32,10 @@ bool cell::getCurrState(){
 	return currentState;
 }
 
+void cell::setCurrState(bool a){
+	currentState = a;
+}
+
 void cell::setNext(bool a){
 
 	nextState = a;

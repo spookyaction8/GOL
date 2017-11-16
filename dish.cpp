@@ -12,13 +12,16 @@
 #include <fstream>
 #include <cstdlib>
 #include <time.h>
+#include <unistd.h>
+
+using namespace std;
 
 dish::dish(){
 
 
-	for(int i = 0; i < 20; i++){
+	for(int i = 0; i < 10; i++){
 
-		for(int j = 0; j < 40; j++){
+		for(int j = 0; j < 20; j++){
 
 			cell c;
 			dishState[i][j] = c;		
@@ -36,9 +39,9 @@ dish::dish(int n){
 
 	srand(n);
 
-	for(int i = 0; i < 20; i++){
+	for(int i = 0; i < 10; i++){
 
-		for(int j = 0; j < 40; j++){
+		for(int j = 0; j < 20; j++){
 
 			int curr = rand() % 2;
 
@@ -66,9 +69,9 @@ dish::~dish(){
 
 void dish::printDish(){
 
-	for(int i = 0; i < 20; i++){
+	for(int i = 0; i < 10; i++){
 
-		for(int j = 0; j < 40; j++){
+		for(int j = 0; j < 20; j++){
 
 			if(dishState[i][j].getCurrState()){
 				cout << liveChar << " ";
@@ -79,13 +82,19 @@ void dish::printDish(){
 
 		cout << endl;
 	}
+
+	for(int i = 0; i < 40; i++){
+		cout << "~";
+	}
+
+	cout << endl;
 }
 
 void dish::nextGeneration(){
 
-	for(int i = 0; i < 20; i++){
+	for(int i = 0; i < 10; i++){
 
-		for(int j = 0; j < 40; j++){
+		for(int j = 0; j < 20; j++){
 
 			int count = 0;
 
@@ -102,7 +111,7 @@ void dish::nextGeneration(){
 
 			*/
 
-			try{
+			/*try{
 				if(dishState[i-1][j].getCurrState())
 					count++;
 			}catch(...){}
@@ -133,7 +142,24 @@ void dish::nextGeneration(){
 			try{
 				if(dishState[i-1][j+1].getCurrState())
 					count++;
-			}catch(...){}
+			}catch(...){} */
+
+			if(dishState[i-1][j].getCurrState() && i != 0)
+					count++;
+			if(dishState[i+1][j].getCurrState() && i != 9)
+					count++;
+			if(dishState[i][j-1].getCurrState() && j != 0)
+					count++;
+			if(dishState[i][j+1].getCurrState() && j !=  19)
+					count++;
+			if(dishState[i+1][j+1].getCurrState() && (j != 19 && i != 9))
+					count++;
+			if(dishState[i-1][j-1].getCurrState() && (j != 0 && i != 0))
+					count++;
+			if(dishState[i+1][j-1].getCurrState() && (j != 0 && i != 9))
+					count++;
+			if(dishState[i-1][j+1].getCurrState() && (j != 19 && i != 0))
+					count++;
 
 			if(count < 2){
 				dishState[i][j].setNext(false);
@@ -154,13 +180,16 @@ void dish::advance(){
 
 	nextGeneration();
 
-	for(int i = 0; i < 20; i++){
+	for(int i = 0; i < 10; i++){
 
-		for(int j = 0; j < 40; j++){
+		for(int j = 0; j < 20; j++){
 
 			dishState[i][j].next();
 		}
 	}
+
+	currGeneration++;
+	cout << endl;
 }
 
 void dish::advance(int n){
@@ -169,3 +198,93 @@ void dish::advance(int n){
 		advance();
 	}
 }
+
+void dish::autoAdvance(int n){
+
+	advance();
+	printDish();
+	sleep(n);
+	autoAdvance(n);
+}
+
+void dish::setLiveChar(char a){
+	liveChar = a;
+}
+
+void dish::setDeadChar(char a){
+	deadChar = a;
+}
+
+char dish::getLiveChar(){
+	return liveChar;
+}
+
+char dish::getDeadChar(){
+	return deadChar;
+}
+
+int dish::getCurrGeneration(){
+	return currGeneration;
+}
+
+int dish::getNumCells(){
+	return numCells;
+}
+
+bool dish::saveDishState(string filename){
+
+	string curr = "/Users/zacharyteutsch/Desktop/GOL/" + filename;
+	ofstream outfile;
+
+	outfile.open(curr);
+
+	for(int i = 0; i < 10; i++){
+		for(int j = 0; j < 20; j++){
+
+			if(dishState[i][j].getCurrState()){
+				outfile << "t";
+			}else{
+				outfile << "f";
+			}			
+		}
+
+		outfile << endl;
+	}
+
+	outfile.close();
+	return true;
+
+}
+
+bool dish::loadDishState(string filename){
+
+	string curr = "/Users/zacharyteutsch/Desktop/GOL/" + filename;
+
+	ifstream infile;
+
+	infile.open(curr);
+
+	if(infile.fail()){
+		cout << "Failed to open save file.";
+		return false;
+	}
+
+	string line;
+	int index = 0;
+
+	while(getline(infile, line)){
+
+		for(int i = 0; i < 20; i++){
+
+			if(line[i] == 't')
+				dishState[index][i].setCurrState(true);
+			else
+				dishState[index][i].setCurrState(false);
+		}
+
+		index++;
+	}
+}
+
+
+

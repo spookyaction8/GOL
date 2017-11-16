@@ -23,6 +23,8 @@ class cell{
 
 		//currState set and getters
 		bool getCurrState();
+		void setCurrState(bool);
+		
 		void setNext(bool);
 		void next();
 

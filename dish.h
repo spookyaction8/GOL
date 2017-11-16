@@ -33,6 +33,8 @@ class dish{
 		void advance();
 		//advances to the next stage
 		void advance(int);
+
+		void autoAdvance(int);
 		//advances an integer number of stages
 
 		//bool autoAdvance();
@@ -48,16 +50,15 @@ class dish{
 
 		//writes and loads state data to a file
 		
-		bool savedDishState(string);
+		bool saveDishState(string);
 		bool loadDishState(string);
 
-		//possible function call(s) for predetermined start state
 
 	private:
 
-		cell dishState[20][40];
+		cell dishState[10][20];
 
-		int numCells = 800;
+		int numCells = 200;
 
 		int currGeneration;
 
