@@ -88,6 +88,8 @@ void dish::printDish(){
 		cout << "~";
 	}
 
+	cout << endl;
+
 	
 }
 
@@ -157,7 +159,7 @@ void dish::advance(){
 	}
 
 	currGeneration++;
-	cout << endl;
+	
 }
 
 void dish::advance(int n){
@@ -165,6 +167,9 @@ void dish::advance(int n){
 	for(int i = 0; i < n; i++){
 		advance();
 	}
+
+	printDish();
+
 }
 
 void dish::autoAdvance(int n){
@@ -234,7 +239,7 @@ bool dish::loadDishState(string filename){
 	infile.open(curr);
 
 	if(infile.fail()){
-		cout << "Failed to open save file.";
+		cout << "Failed to open save file." << endl;
 		return false;
 	}
 

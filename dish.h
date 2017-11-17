@@ -37,8 +37,6 @@ class dish{
 		void autoAdvance(int);
 		//advances an integer number of stages
 
-		//bool autoAdvance();
-
 		void setLiveChar(char);
 		void setDeadChar(char);
 
