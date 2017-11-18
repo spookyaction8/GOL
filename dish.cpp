@@ -16,10 +16,14 @@
 
 using namespace std;
 
+//base constructor for dish objcect
+//iniatilizes a 20 by 20 2d array with cell objects
+//sets those to default false
+//iniatilizes members
 dish::dish(){
 
 
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < 20; i++){
 
 		for(int j = 0; j < 20; j++){
 
@@ -35,11 +39,14 @@ dish::dish(){
 
 }
 
+//constructor for randomized start
+//seeds pseudo random number generator
+//sets true and false values of the cells accordingly
 dish::dish(int n){
 
 	srand(n);
-
-	for(int i = 0; i < 10; i++){
+	int count = 0;
+	for(int i = 0; i < 20; i++){
 
 		for(int j = 0; j < 20; j++){
 
@@ -52,11 +59,13 @@ dish::dish(int n){
 
 			}else{
 				cell c(true);
+				count++;
 				dishState[i][j] = c;
 			}		
 		}
 	}
 	currGeneration = 0;
+	liveCells = count;
 
 	liveChar = 'o';
 	deadChar = ' ';
@@ -67,10 +76,11 @@ dish::~dish(){
 	//destructor
 }
 
+//prints a visual representation of the dish to the console
 void dish::printDish(){
 
-	cout << "Generation " << currGeneration << endl;
-	for(int i = 0; i < 10; i++){
+	cout << "Generation " << currGeneration << " - " << liveCells << " live cells" << endl;
+	for(int i = 0; i < 20; i++){
 
 		for(int j = 0; j < 20; j++){
 
@@ -93,9 +103,14 @@ void dish::printDish(){
 	
 }
 
+//determines next generation values for cells in dish
+//uses Conway's algorithm to determine death, survival, or reproduction
+//sets values of each cell for their NextState
 void dish::nextGeneration(){
 
-	for(int i = 0; i < 10; i++){
+	int count1 = 0;
+
+	for(int i = 0; i < 20; i++){
 
 		for(int j = 0; j < 20; j++){
 
@@ -116,17 +131,17 @@ void dish::nextGeneration(){
 
 			if(dishState[i-1][j].getCurrState() && i != 0)
 					count++;
-			if(dishState[i+1][j].getCurrState() && i != 9)
+			if(dishState[i+1][j].getCurrState() && i != 19)
 					count++;
 			if(dishState[i][j-1].getCurrState() && j != 0)
 					count++;
 			if(dishState[i][j+1].getCurrState() && j !=  19)
 					count++;
-			if(dishState[i+1][j+1].getCurrState() && (j != 19 && i != 9))
+			if(dishState[i+1][j+1].getCurrState() && (j != 19 && i != 19))
 					count++;
 			if(dishState[i-1][j-1].getCurrState() && (j != 0 && i != 0))
 					count++;
-			if(dishState[i+1][j-1].getCurrState() && (j != 0 && i != 9))
+			if(dishState[i+1][j-1].getCurrState() && (j != 0 && i != 19))
 					count++;
 			if(dishState[i-1][j+1].getCurrState() && (j != 19 && i != 0))
 					count++;
@@ -135,8 +150,10 @@ void dish::nextGeneration(){
 				dishState[i][j].setNext(false);
 			}else if(count == 2 && dishState[i][j].getCurrState()){
 				dishState[i][j].setNext(true);
+				count1++;
 			}else if(count == 3){
 				dishState[i][j].setNext(true);
+				count1++;
 			}else{
 				dishState[i][j].setNext(false);
 			}
@@ -144,13 +161,17 @@ void dish::nextGeneration(){
 
 	}
 
+	liveCells = count1;
+
 }
 
+//switches all cells in dish from currentState to their next state
+//increments the generation value
 void dish::advance(){
 
 	nextGeneration();
 
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < 20; i++){
 
 		for(int j = 0; j < 20; j++){
 
@@ -162,6 +183,8 @@ void dish::advance(){
 	
 }
 
+//calls the parameter free advance function n amount of times
+//calls to printDish() after each call to advance();
 void dish::advance(int n){
 
 	for(int i = 0; i < n; i++){
@@ -172,6 +195,10 @@ void dish::advance(int n){
 
 }
 
+//automatically advances the dish on a time interval
+//advances the dish and prints
+//calls sleep for n seconds, pausing execution
+//calls to autoAdvance for recursive loop
 void dish::autoAdvance(int n){
 	
 		advance();
@@ -181,38 +208,46 @@ void dish::autoAdvance(int n){
 			
 }
 
+//sets the live representaiton character for the dish
 void dish::setLiveChar(char a){
 	liveChar = a;
 }
 
+//sets the dead representaiton character for the dish
 void dish::setDeadChar(char a){
 	deadChar = a;
 }
 
+//returns the live representaiton character for the dish
 char dish::getLiveChar(){
 	return liveChar;
 }
 
+//returns the dead representaiton character for the dish
 char dish::getDeadChar(){
 	return deadChar;
 }
 
+//returns the current generation
 int dish::getCurrGeneration(){
 	return currGeneration;
 }
 
+//returns the number of cells
 int dish::getNumCells(){
 	return numCells;
 }
 
+//takes a filename input and saves the current dish to that file
+//formats with 'f' for a dead cell and 't' for live cell
 bool dish::saveDishState(string filename){
 
-	string curr = "/Users/zacharyteutsch/Desktop/GOL/" + filename;
+	string curr = "/Users/zacharyteutsch/Desktop/GOL/Saves/" + filename;
 	ofstream outfile;
 
 	outfile.open(curr);
 
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < 20; i++){
 		for(int j = 0; j < 20; j++){
 
 			if(dishState[i][j].getCurrState()){
@@ -230,6 +265,10 @@ bool dish::saveDishState(string filename){
 
 }
 
+//loads a saved dish state into the simulator
+//parses t/f format with getline and string[]
+//sets dish values based on parsed data
+//returns false if file was properly accessed
 bool dish::loadDishState(string filename){
 
 	string curr = "/Users/zacharyteutsch/Desktop/GOL/" + filename;
@@ -259,6 +298,3 @@ bool dish::loadDishState(string filename){
 		index++;
 	}
 }
-
-
-

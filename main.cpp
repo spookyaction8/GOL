@@ -11,6 +11,13 @@
 #include <unistd.h>
 
 using namespace std;
+
+//menu function
+//takes user input to navigate options for Game of Life
+//1)Random state
+//2)Example state
+//3)Saved State
+// Users have the option to auto-advance or to control generation advance
 void menu(){
 
 	int input;
@@ -25,7 +32,7 @@ void menu(){
 	if(input == 1){
 		cout << "Would like to auto-advance through generations or enter generation values?" << endl;
 		cout << "1) Auto-advance." << endl;
-		cout << "2) Control pacing." << endl;
+		cout << "2) Control pacing. (Includes save option)" << endl;
 		cout << "Enter a number here: ";
 		cin >> input;
 
@@ -47,12 +54,19 @@ void menu(){
 
 			while(true){
 
-				cout << endl << "Enter an integer over 0 to advance n generations, enter 0 to quit: ";
+				cout << endl << "Enter a positive integer to advance n generations, 0 to save, or a negative int to quit: ";
 				cin >> input;
 				
 
 				if(input > 0){
 					d.advance(input);
+				}else if(input == 0){
+					string filename;
+					cout << endl << "Please enter a filename to save as: ";
+					cin >> filename;
+
+					d.saveDishState(filename);
+
 				}else{
 					break;
 				}
@@ -76,17 +90,39 @@ void menu(){
 		cin >> input;
 
 		if(input == 1){
+			dish d(0);
+			d.loadDishState("Examples/fixed.txt");
+			d.printDish();
+			sleep(2);
+			d.autoAdvance(2);
 
 		}else if(input == 2){
-
+			dish d(0);
+			d.loadDishState("Examples/small.txt");
+			d.printDish();
+			sleep(2);
+			d.autoAdvance(2);
 		}else if(input == 3){
-			
+			dish d(0);
+			d.loadDishState("Examples/pentadecathlon.txt");
+			d.printDish();
+			sleep(2);
+			d.autoAdvance(2);
 		}else if(input == 4){
-			
+			dish d(0);
+			d.loadDishState("Examples/pulsar.txt");
+			d.printDish();
+			sleep(2);
+			d.autoAdvance(2);
 		}else if(input == 5){
-			
+			dish d(0);
+			d.loadDishState("Examples/lwss.txt");
+			d.printDish();
+			sleep(2);
+			d.autoAdvance(2);
 		}else{
-
+			cout << endl << "Invalid menu choice selected. Returning to the main menu." << endl << endl;
+			menu();
 		}
 
 	}else if(input == 3){
@@ -97,10 +133,10 @@ void menu(){
 
 		filename = "Saves/" + filename;
 
-		dish d(3);
+		dish d(0);
 		d.loadDishState(filename);
 
-		cout << "1) Auto-advance or 2) controlled progression?" << endl;
+		cout << "1) Auto-advance or 2) controlled progression (Includes save option)?" << endl;
 		cout << "Enter the number of your choice: ";
 		cin >> input;
 
@@ -117,12 +153,19 @@ void menu(){
 
 			while(true){
 
-				cout << endl << "Enter an integer over 0 to advance n generations, enter 0 to quit: ";
+				cout << endl << "Enter a positive integer to advance n generations, 0 to save, or a negative int to quit: ";
 				cin >> input;
 				
 
 				if(input > 0){
 					d.advance(input);
+				}else if(input == 0){
+					string filename;
+					cout << endl << "Please enter a filename to save as: ";
+					cin >> filename;
+
+					d.saveDishState(filename);
+
 				}else{
 					break;
 				}
@@ -144,14 +187,7 @@ void menu(){
 }
 int main(void){
 
-	
-	
-
-
 	menu();
-
-
-	cout << endl;
 
 
 }

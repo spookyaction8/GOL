@@ -25,18 +25,20 @@ class dish{
 
 		//functions
 
-		void printDish();
 		//prints representation of the dish to console
-
+		void printDish();
+		
+		//determines next generation
 		void nextGeneration();
 
+		//advances the dish 1 stage or int amount of stages
 		void advance();
-		//advances to the next stage
 		void advance(int);
 
-		void autoAdvance(int);
 		//advances an integer number of stages
-
+		void autoAdvance(int);
+		
+		//setters
 		void setLiveChar(char);
 		void setDeadChar(char);
 
@@ -47,19 +49,23 @@ class dish{
 		int getNumCells();
 
 		//writes and loads state data to a file
-		
 		bool saveDishState(string);
 		bool loadDishState(string);
 
 
 	private:
 
-		cell dishState[10][20];
+		//array that stores cells
+		cell dishState[20][20];
 
-		int numCells = 200;
+		//cell count data members
+		int numCells = 400;
+		int liveCells = 0;
 
+		//generation
 		int currGeneration;
 
+		//characters for cell representation
 		char liveChar;
 		char deadChar;
 

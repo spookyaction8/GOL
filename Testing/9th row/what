@@ -1,0 +1,95 @@
+Last login: Fri Nov 17 20:16:25 on ttys001
+Zacharys-MacBook-Pro:~ zacharyteutsch$ /Users/zacharyteutsch/Desktop/GOL/GOL ; exit;
+Welcome to Conway's Game of Life!
+What would you like to do?
+1) Start with a psuedo-random state.
+2) Load an example state.
+3) Load a saved state.
+Enter a number here: 1
+Would like to auto-advance through generations or enter generation values?
+1) Auto-advance.
+2) Control pacing.
+Enter a number here: 3
+
+Invalid menu choice selected. Returning to the main menu.
+
+Welcome to Conway's Game of Life!
+What would you like to do?
+1) Start with a psuedo-random state.
+2) Load an example state.
+3) Load a saved state.
+Enter a number here: 2
+Which example state would you like to load?
+1) Fixed state examples.
+2) Sample small oscillators.
+3) Pentadecathlon oscillator.
+4) Pulsar oscillator.
+5) Lightweight spaceship.
+Enter the number of your choice: 1
+Generation 0
+                                        
+        o o               o o           
+      o     o             o o           
+        o o                             
+                                        
+                                        
+                                        
+      o o               o o             
+    o     o             o   o           
+      o   o               o             
+        o                               
+                                        
+                                        
+                  o                     
+                o   o                   
+                  o                     
+                                        
+                                        
+                                        
+                                        
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation 1
+                                        
+        o o               o o           
+      o     o             o o           
+        o o                             
+                                        
+                                        
+                                        
+      o o               o o             
+    o     o             o   o           
+      o o o               o             
+        o                               
+                                        
+                                        
+                  o                     
+                o   o                   
+                  o                     
+                                        
+                                        
+                                        
+                                        
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generation 2
+                                        
+        o o               o o           
+      o     o             o o           
+        o o                             
+                                        
+                                        
+                                        
+      o o               o o             
+    o     o             o   o           
+      o o o               o             
+      o o o                             
+                                        
+                                        
+                  o                     
+                o   o                   
+                  o                     
+                                        
+                                        
+                                        
+                                        
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

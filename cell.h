@@ -24,16 +24,17 @@ class cell{
 		//currState set and getters
 		bool getCurrState();
 		void setCurrState(bool);
-		
+
+		//next state related functions
 		void setNext(bool);
 		void next();
 
 	private:
 
+		//state data members
 		bool currentState;
 		bool nextState;
 	
-
 };
 
 
