@@ -1,7 +1,7 @@
 //Zachary Teutsch
 //
 //CSCI 1300
-//
+//Recitation: 209 - G. Byrandurga Gopinath
 //Conway's Game of Life
 //Cell Header
 
